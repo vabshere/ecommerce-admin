@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Add Sales</h1>
+<div mat-dialog-content>
+  <form class="form" #addSales="ngForm" fxLayout="column" fxLayoutGap="10px">
+    <mat-form-field>
+      <input
+        required
+        ngModel
+        #name="ngModel"
+        name="name"
+        matInput
+        placeholder="Name"
+        [(ngModel)]="data.name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        required
+        ngModel
+        #brief="ngModel"
+        name="brief"
+        matInput
+        placeholder="Brief"
+        [(ngModel)]="data.brief"
+      />
+    </mat-form-field>
+    <button type="button" mat-raised-button (click)="image.click()">
+      Upload Image
+    </button>
+    <input
+      hidden
+      #image
+      type="file"
+      name="image"
+      (change)="onFileChange($event)"
+      multiple="false"
+    />
+    <img [src]="img" style="height: 20vh" alt="" />
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button
+    mat-button
+    [mat-dialog-close]="data"
+    [disabled]="!addSales.valid"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
+</div>

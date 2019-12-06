@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Sales</h1>
+<div mat-dialog-content>
+  <div>
+    Name: {{data.name}}
+  </div>
+  <div>
+    Phone: {{data.phone}}
+  </div>
+  <div>
+    Address: {{data.address}}
+  </div>
+  <div>
+    Email: {{data.email}}
+  </div>
+  <div>
+    GSTIN: {{data.gstin}}
+  </div>
+  <div>
+    PAN: {{data.pan}}
+  </div>
+  <div>
+    Product Category: {{data.product_category}}
+  </div>
+  <div>
+    Attr1: {{data.attr1}}
+  </div>
+  <div>
+    Attr2: {{data.attr2}}
+  </div>
+  <div>
+    Attr3: {{data.attr3}}
+  </div>
+  <div>
+    <img [src]="data.gst_img" style="height: 15vh;" alt="" />
+  </div>
+  <div>
+    <img [src]="data.pan_img" style="height: 15vh;" alt="" />
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onClick()">Ok</button>
+</div>
